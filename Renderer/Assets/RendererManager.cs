@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RendererManager : MonoBehaviour
 {
-    public Renderer renderer;
+    //public Renderer renderer;
 
-    private const string path = "LegacyShaders/Transparent/Specular";
+    //private const string path = "LegacyShaders/Transparent/Specular";
 
     void Start()
     {

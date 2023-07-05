@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\RendererManager.cs" />
     <Compile Include="Assets\CameraController.cs" />
+    <Compile Include="Assets\PlayerController.cs" />
+    <Compile Include="Assets\FOVController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MyShader.shader" />
