@@ -58,8 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\99. Resource\BasicBandit\DemoSceneBasicBandit\Scripts\ButtonFunction.cs" />
     <Compile Include="Assets\99. Resource\BasicBandit\DemoSceneBasicBandit\Scripts\MovementCamera.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\MouseRotation.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
