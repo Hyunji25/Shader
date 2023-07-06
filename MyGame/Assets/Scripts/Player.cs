@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 15;
-    float hAxis;
-    float vAxis;
+    public float speed = 3;
+    float dashspeed = 2;
 
-    Vector3 moveVec;
+    public float gravity = -20;
+    float yVelocity;
+
+    CharacterController cc;
+
+    private void Awake()
+    {
+        cc = gameObject.GetComponent<CharacterController>();
+    }
 
     void Start()
     {
@@ -17,11 +24,22 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        hAxis = Input.GetAxisRaw("Horizontal");
-        vAxis = Input.GetAxisRaw("Vertical");
+        float hAxis = Input.GetAxis("Horizontal");
+        float vAxis = Input.GetAxis("Vertical");
 
-        moveVec = new Vector3(hAxis, 0, vAxis).normalized;
+        Vector3 dir = new Vector3(hAxis, 0, vAxis);
+        dir.Normalize();
 
-        transform.position += moveVec * speed * Time.deltaTime;
+        dir = Camera.main.transform.TransformDirection(dir);
+
+        if (Input.GetKey(KeyCode.LeftShift))
+            transform.position += dir * speed * dashspeed * Time.deltaTime;
+        else
+            transform.position += dir * speed * Time.deltaTime;
+
+        yVelocity += gravity * Time.deltaTime;
+        dir.y = yVelocity;
+
+        cc.Move(dir * speed * Time.deltaTime);
     }
 }
