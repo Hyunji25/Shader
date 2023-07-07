@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 3;
-    float dashspeed = 2;
+    private float PlayerSpeed = 5;
+    private float dashspeed = 2;
 
-    public float gravity = -20;
-    float yVelocity;
+    private float gravity = -20;
+    private float yVelocity;
 
     CharacterController cc;
 
@@ -33,13 +33,13 @@ public class Player : MonoBehaviour
         dir = Camera.main.transform.TransformDirection(dir);
 
         if (Input.GetKey(KeyCode.LeftShift))
-            transform.position += dir * speed * dashspeed * Time.deltaTime;
+            transform.position += dir * PlayerSpeed * dashspeed * Time.deltaTime;
         else
-            transform.position += dir * speed * Time.deltaTime;
+            transform.position += dir * PlayerSpeed * Time.deltaTime;
 
         yVelocity += gravity * Time.deltaTime;
         dir.y = yVelocity;
 
-        cc.Move(dir * speed * Time.deltaTime);
+        cc.Move(dir * PlayerSpeed * Time.deltaTime);
     }
 }

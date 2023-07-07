@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MouseCamera : MonoBehaviour
 {
-    public float speed = 200;
+    private float CameraSpeed = 350;
 
-    float mx; 
-    float my; 
+    private float mx;
+    private float my; 
 
     void Start()
     {
@@ -19,10 +19,10 @@ public class MouseCamera : MonoBehaviour
         float h = Input.GetAxis("Mouse X");
         float v = Input.GetAxis("Mouse Y");
 
-        mx += h * speed * Time.deltaTime;
-        my += v * speed * Time.deltaTime;
+        mx += h * CameraSpeed * Time.deltaTime;
+        my += v * CameraSpeed * Time.deltaTime;
 
-        my = Mathf.Clamp(my, -90, 90);
+        my = Mathf.Clamp(my, -40, 10);
 
         transform.eulerAngles = new Vector3(-my, mx, 0);
     }
