@@ -156,7 +156,7 @@ public class Enemy : MonoBehaviour
         isWalking = true;
         //anim.SetBool("Walking", isWalking);
         applySpeed = ESpeed;
-        transform.position -= new Vector3(1.0f, 0.0f, 0.0f) * Time.deltaTime;
+        //transform.position -= new Vector3(1.0f, 0.0f, 0.0f) * Time.deltaTime;
         Debug.Log("°È±â");
     }
 
